@@ -2,7 +2,7 @@
 import random
 
 class BankAccount:
-    def __init__(self, name):
+    def __init__(self, name): #Constructor
         self.name = name
         self.balance = 0.0
         self.number = random.randint(1000000, 9999999)
@@ -13,13 +13,14 @@ class BankAccount:
         got_deposit_amount = False
         back_menu = False
         while got_deposit_amount == False and back_menu == False:
-            try:
+            try: #Need to make sure we received a float or integer.
                 typed_input = input().upper()
-                if typed_input == "MENU":
+                if typed_input == "MENU": #This 'if' is for when you type wrong. Exits the deposit screen.
                     back_menu = True
                     break
                 amount_parts = str(float(typed_input)).split(".")
-                decimal_part = amount_parts[1]
+                #The line above makes sure you have a float instead of an integer and then preps it for truncation by turning it into string.
+                decimal_part = amount_parts[1] #Lines 23-25 cut off any decimals past two places (i.e. 9.997 becomes 9.99)
                 decimal_part = decimal_part[0:2]
                 deposit_amount = float(f"{amount_parts[0]}.{decimal_part}")
                 if deposit_amount > 0:
@@ -29,11 +30,11 @@ class BankAccount:
                     #LOL this one is just my inexperience. AI says use 'raise ValueError', 
                     #but I think this is funny. Does the same thing, though, so the except
                     #will handle the text and reset and I don't have to type it again.
-            except ValueError:
+            except (ValueError, IndexError):
                 print()
                 print("Please enter a valid amount.")
-                print("How much would you like to DEPOSIT?")
                 print()
+                print("How much would you like to DEPOSIT?")
                 print('(Pressed the wrong button? Type "menu".)')
         
         if got_deposit_amount == True:
@@ -72,7 +73,7 @@ class BankAccount:
                     #LOL this one is just my inexperience. AI says use 'raise ValueError', 
                     #but I think this is funny. Does the same thing, though, so the except
                     #will handle the text and reset and I don't have to type it again.
-            except ValueError:
+            except (ValueError, IndexError):
                 print()
                 print("Please enter a valid amount.")
                 print()
