@@ -23,6 +23,9 @@ while menu_choice not in ["4", "4.", "QUIT", "4. QUIT"]:
     if menu_choice in ["1", "1.", "MAKE A DEPOSIT", "DEPOSIT", "1. MAKE A DEPOSIT"]:
         print()
         account1.deposit()
+    if menu_choice in ["2", "2.", "MAKE A WITHDRAWAL", "WITHDRAWAL", "1. MAKE A WITHDRAWAL"]:
+        print()
+        account1.withdrawal()
     elif menu_choice in ["3", "3.", "VIEW ACCOUNT INFORMATION", "ACCOUNT INFORMATION", "INFO", "INFORMATION", "3. VIEW ACCOUNT INFORMATION"]:
         print()
         account1.information()
