@@ -14,9 +14,9 @@ account1 = BankAccount(customer_name)
 
 print()
 #Function gets input, since the menu choice will be repeated, turned it into a function
-menu_choice = display_menu().upper()
+menu_choice = display_menu().upper() #.upper() used here so lowercase inputs can be captured to
 
-#4. Quit
+#4. Loop keeps going until user quits
 while menu_choice not in ["4", "4.", "QUIT", "4. QUIT"]:
     #1. Make a deposit
     if menu_choice in ["1", "1.", "MAKE A DEPOSIT", "DEPOSIT", "1. MAKE A DEPOSIT"]:

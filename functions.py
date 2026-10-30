@@ -30,7 +30,7 @@ class BankAccount:
                     #lol this one is just my inexperience. AI says use 'raise ValueError', 
                     #but I think this is funny. Does the same thing, though, so the except
                     #will handle the print text and reset and I don't have to type it again.
-            except (ValueError, IndexError): #index error covers for scientific numbers and nan/inf
+            except (ValueError, IndexError): #index error covers for scientific notation and nan/inf
                 print()
                 print("Please enter a valid amount.")
                 print()
@@ -74,7 +74,7 @@ class BankAccount:
                     #LOL this one is just my inexperience. AI says use 'raise ValueError', 
                     #but I think this is funny. Does the same thing, though, so the except
                     #will handle the text and reset and I don't have to type it again.
-            except (ValueError, IndexError):
+            except (ValueError, IndexError): #index error covers for scientific notation and nan/inf
                 print()
                 print("Please enter a valid amount.")
                 print()
@@ -96,7 +96,7 @@ class BankAccount:
         print("Press enter to return to menu.")
         input()#I like this here to let them see it as long as they want
 
-def display_menu(): #display menu function to do object oreiented programming
+def display_menu(): #menu is shown repeatedly, so function used here
     print("Please choose an option:")
     print()
     print("1. Make a deposit")
